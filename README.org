@@ -1,0 +1,12 @@
+* ccclock javascript
+
+this is an implementation of ccclock written in javascript.
+
+** todo
+- [ ] add package.json with scripts to run the backend and frontend from the repo root
+- [ ] set up environment variable handling
+- [ ] create time view
+- [ ] create weather api proxy
+- [ ] create weather view
+- [ ] add styling
+- [ ] update this README
