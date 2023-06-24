@@ -1,4 +1,4 @@
-* ccclock javascript
+* ccclock-js
 
 this is an implementation of ccclock written in javascript.
 
