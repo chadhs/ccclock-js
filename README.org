@@ -2,11 +2,18 @@
 
 this is an implementation of ccclock written in javascript.
 
+** development
+copy the example .env and enter your openweather api key
+#+BEGIN_SRC sh
+  cp .env-example .env
+#+END_SRC
+
+
 ** todo
 - [ ] add package.json with scripts to run the backend and frontend from the repo root
-- [ ] set up environment variable handling
-- [ ] create time view
-- [ ] create weather api proxy
-- [ ] create weather view
-- [ ] add styling
+- [x] set up environment variable handling
+- [x] create time view
+- [x] create weather api proxy
+- [x] create weather view
+- [x] add styling
 - [ ] update this README
