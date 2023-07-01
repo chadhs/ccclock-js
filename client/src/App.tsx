@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Time from "./Time";
-import Weather from "./Weather";
+import Time from "./components/Time";
+import Weather from "./components/Weather";
 
 function App() {
   return (

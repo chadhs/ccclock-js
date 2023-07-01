@@ -7,13 +7,20 @@ function kelvinToF(kTemp) {
 function Weather() {
   const [weatherData, setWeatherData] = useState<any>({});
 
-  // use setInterval every 5mins
-  useEffect(() => {
+  const fetchWeather = () => {
     fetch("/api/weather")
       .then((response) => response.json())
       .then((response) => {
         setWeatherData(response);
       });
+  };
+
+  useEffect(() => {
+    fetchWeather();
+    const interval = setInterval(() => {
+      fetchWeather();
+    }, 300000);
+    return () => clearInterval(interval);
   }, []);
 
   const feelsToday =
@@ -37,9 +44,9 @@ function Weather() {
       ) : (
         <>
           <div className="temp-display">
-            <div className="temp">{feelsCurrent}</div>
+            <div className="temp">{feelsCurrent}°</div>
             <div className="hi-low">
-              {feelsHigh}/{feelsLow}
+              {feelsHigh}°/{feelsLow}°
             </div>
           </div>
           <div className="cond-display">
@@ -78,19 +85,3 @@ function Weather() {
 }
 
 export default Weather;
-
-// [:div.cond-display
-//       [:i.wi {:class (str "wi-owm-"
-//                       (if night? "night-" "day-")
-//                       cond-current
-//                       " wi-fw")}]
-//       " "
-//       [:i.wi {:class (str "wi-owm-"
-//                       (if night? "night-" "day-")
-//                       cond-3hour
-//                       " wi-fw")}]
-//       " "
-//       [:i.wi {:class (str "wi-owm-"
-//                       (if night? "night-" "day-")
-//                       cond-6hour
-//                       " wi-fw")}]]
